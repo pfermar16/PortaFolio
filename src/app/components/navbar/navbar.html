@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <div class="logo"></div>
+  <ul class="nav-links">
+    <li><a href="#hero">Inicio</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li><a href="#technologies">Tecnologías</a></li>
+    <li><a href="#about">Sobre mí</a></li>
+  </ul>
+
+  <!-- Toggle con iconos -->
+  <div class="theme-switch" (click)="toggleTheme()">
+    <div class="switch-label">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+      <!-- Agregamos [class.active] -->
+      <div class="switch-ball" [class.active]="darkMode"></div>
+    </div>
+  </div>
+</nav>

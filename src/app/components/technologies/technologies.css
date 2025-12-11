@@ -1,0 +1,85 @@
+/* Contenedor general */
+.technologies {
+    padding: 4rem 2rem;
+    background-color: var(--section-bg);
+    color: var(--body-color);
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.technologies h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Categorías */
+.category {
+    margin-bottom: 3rem;
+    text-align: left;
+    /* 👈 Cambia la alineación solo dentro de cada categoría */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Grid de tecnologías */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Tarjeta de tecnología */
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Iconos */
+.tech-card img {
+    width: 48px;
+    height: 48px;
+    transition: filter 0.3s;
+}
+
+body.dark-theme .tech-card img {
+    filter: invert(1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Variables para Light/Dark theme */
+:root {
+    --section-bg: #fff;
+    --body-color: #333;
+    --progress-bg: #ddd;
+    --progress-color: #28a745;
+}
+
+body.dark-theme {
+    --section-bg: #1a1a1a;
+    --body-color: #f1f1f1;
+    --progress-bg: #333;
+    --progress-color: #4caf50;
+}

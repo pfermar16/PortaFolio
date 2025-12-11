@@ -1,0 +1,110 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--navbar-color);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--btn-bg);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* -------- Switch moderno -------- */
+.theme-switch {
+  position: relative;
+  width: 60px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.switch-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background-color: #ccc;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.switch-ball {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+/* Clase activa para mover la bola */
+.switch-ball.active {
+  transform: translateX(32px);
+}
+
+.icon-sun,
+.icon-moon {
+  font-size: 14px;
+  pointer-events: none;
+}
+
+body.dark-theme .switch-label {
+  background-color: #444;
+}
+
+body.dark-theme .icon-sun {
+  color: #999;
+}
+
+body.dark-theme .icon-moon {
+  color: #ffd700;
+}
+
+body:not(.dark-theme) .icon-sun {
+  color: #ffdd33;
+}
+
+body:not(.dark-theme) .icon-moon {
+  color: #999;
+}
+
+/* Cuando darkMode está activo */
+body.dark-theme .switch-label {
+  background-color: #444;
+}
+
+body.dark-theme .switch-ball {
+  transform: translateX(24px);
+}

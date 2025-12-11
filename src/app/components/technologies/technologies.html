@@ -1,0 +1,16 @@
+<section id="technologies" class="technologies">
+    <h2>Mis Tecnologías y Habilidades</h2>
+
+    <div class="category" *ngFor="let cat of categorias">
+        <h3>{{ cat.nombre }}</h3>
+        <div class="tech-grid">
+            <div class="tech-card" *ngFor="let tech of cat.items">
+                <img [src]="tech.icon" [alt]="tech.nombre" />
+                <p>{{ tech.nombre }}</p>
+                <div class="progress-bar">
+                    <div class="progress" [style.width.%]="tech.nivel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

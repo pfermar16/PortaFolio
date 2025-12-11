@@ -1,0 +1,47 @@
+/* Variables para Light/Dark theme */
+:root {
+    --footer-bg: #f9f9f9; /* fondo claro */
+    --footer-color: #000; /* texto e iconos negros en light */
+}
+
+body.dark-theme {
+    --footer-bg: #111;   /* fondo dark */
+    --footer-color: #fff; /* texto e iconos blancos en dark */
+}
+
+/* Footer general */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    padding: 2rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contenido del footer */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Contenedor de links */
+.footer-contact {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Iconos SVG de los links */
+.footer-contact a.contact-link svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;       /* toma el color del texto */
+    transition: transform 0.2s, color 0.3s;
+}
+
+/* Hover en iconos */
+.footer-contact a.contact-link:hover svg {
+    transform: scale(1.2);
+    color: var(--btn-bg);     /* opcional: cambiar color al pasar el mouse */
+}

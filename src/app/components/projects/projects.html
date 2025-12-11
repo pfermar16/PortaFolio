@@ -1,0 +1,42 @@
+<section id="projects" class="projects">
+    <h2>Mis Proyectos</h2>
+
+    <div class="grid">
+        <div class="card" *ngFor="let p of proyectos">
+
+            <h3>
+                {{ p.nombre }}
+                <span class="project-badge" [ngClass]="{
+                        'en-uso': p.estado === 'En uso',
+                        'prototipo': p.estado === 'Prototipo',
+                        'en-desarrollo': p.estado === 'En desarrollo'
+                      }">
+                    {{ p.estado }}
+                </span>
+            </h3>
+            <h4>{{ p.subtitulo }}</h4>
+            <p>{{ p.descripcion }}</p>
+
+            <!-- Tecnologías -->
+            <div class="tech-icons">
+                <img *ngFor="let t of p.tech" [src]="t" alt="tech icon">
+            </div>
+
+            <a [href]="p.repo" target="_blank" class="btn btn-outline">
+                Enlace
+            </a>
+
+            <!-- Imagen si existe -->
+            <img *ngIf="p.imagen" [src]="p.imagen" alt="{{ p.nombre }} imagen" class="project-image" />
+
+            <!-- Video si NO hay imagen -->
+            <div *ngIf="p.video && !p.imagen">
+                <h4>{{ p.videoTitulo }}</h4>
+                <video controls width="100%">
+                    <source [src]="p.video" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+</section>
