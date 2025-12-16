@@ -27,7 +27,7 @@ export class Projects {
       url: 'https://github.com/pfermar16/GastroNova',
       repo: 'https://github.com/pfermar16/GastroNova',
       videoTitulo: 'Video Demostrativo GastroNova',
-      video: 'assets/video-demo_SMVR1pYJ.mp4',
+      video: 'assets/VideoDemoGastronova.mp4',
       tech: [
         'assets/angularjs-original.svg',
         'assets/typescript-original.svg',
