@@ -1,53 +1,62 @@
-/* Hero Container */
+/* =========================
+   HERO CONTAINER
+========================= */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    min-height: 100vh;
+    justify-content: flex-start;
+    /* evita hueco con navbar */
+    width: 100%;
+    min-height: auto;
+    padding: 4.5rem 1.5rem 2rem;
+    /* espacio controlado bajo navbar */
     background-color: var(--body-bg);
     color: var(--body-color);
-    transition: background-color 0.3s, color 0.3s;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
 }
 
-/* Contenido del Hero */
+/* =========================
+   HERO CONTENT
+========================= */
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
+    width: 100%;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
 }
 
 .status {
     color: #28a745;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .hero-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--body-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
 .hero-content p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--body-color);
+    margin-bottom: 0.8rem;
 }
 
-/* Contact Links */
+/* =========================
+   CONTACT LINKS
+========================= */
 .hero-contact {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
 }
 
 .hero-contact a.contact-link {
@@ -60,31 +69,103 @@
     transition: color 0.3s;
 }
 
-/* Si usas SVG inline */
+/* SVG ICONS */
 .hero-contact a.contact-link svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
-    /* iconos cambian automáticamente con el color del texto */
-    transition: transform 0.2s, color 0.3s;
+    transition: transform 0.2s;
 }
 
 .hero-contact a.contact-link:hover svg {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
-/* Si quieres usar img externos */
+/* IMG ICONS */
 .hero-contact a.contact-link img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     transition: transform 0.2s, filter 0.3s;
 }
 
 body.dark-theme .hero-contact a.contact-link img {
     filter: invert(1);
-    /* iconos negros se vuelven blancos en dark mode */
 }
 
 .hero-contact a.contact-link:hover img {
-    transform: scale(1.2);
+    transform: scale(1.15);
+}
+
+/* =========================
+   TABLET (≤ 992px)
+========================= */
+@media (max-width: 992px) {
+    .hero {
+        padding-top: 4rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================
+   MOBILE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 3.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-contact {
+        gap: 0.75rem;
+    }
+}
+
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+    }
+
+    .hero-contact a.contact-link {
+        font-size: 0.85rem;
+    }
 }
