@@ -1,3 +1,6 @@
+# Para buildear un proyecto de Angular
+ng build --base-href=/ruta de tu proyecto/
+
 # PortFolio
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
