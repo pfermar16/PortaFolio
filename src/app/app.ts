@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
-import { About } from './components/about/about';
 import { Projects } from './components/projects/projects';
 import { Footer } from './components/footer/footer';
 import { Technologies } from './components/technologies/technologies';
@@ -17,7 +16,6 @@ import { Technologies } from './components/technologies/technologies';
     RouterModule,
     Navbar,
     Hero,
-    About,
     Projects,
     Technologies,
     Footer,

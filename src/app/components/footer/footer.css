@@ -1,47 +1,47 @@
-/* Variables para Light/Dark theme */
-:root {
-    --footer-bg: #f9f9f9; /* fondo claro */
-    --footer-color: #000; /* texto e iconos negros en light */
-}
-
-body.dark-theme {
-    --footer-bg: #111;   /* fondo dark */
-    --footer-color: #fff; /* texto e iconos blancos en dark */
-}
-
-/* Footer general */
-.footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-color);
-    padding: 2rem;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Contenido del footer */
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Contenedor de links */
 .footer-contact {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
 }
 
-/* Iconos SVG de los links */
+/* Contenedor circular */
+.footer-contact a.contact-link {
+    width: 40px;
+    /* tamaño del círculo */
+    height: 40px;
+    border-radius: 50%;
+    /* 🔥 círculo perfecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    /* o pon un color si quieres */
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+/* SVG centrado dentro del círculo */
 .footer-contact a.contact-link svg {
-    width: 30px;
-    height: 30px;
-    fill: currentColor;       /* toma el color del texto */
-    transition: transform 0.2s, color 0.3s;
+    width: 22px;
+    /* tamaño del icono dentro del círculo */
+    height: 22px;
+    display: block;
+    fill: var(--footer-icon);
+    transition: transform 0.25s ease, fill 0.25s ease;
 }
 
-/* Hover en iconos */
+/* Hover elegante */
+.footer-contact a.contact-link:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    /* light theme */
+}
+
+body.dark-theme .footer-contact a.contact-link:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    /* dark theme */
+}
+
 .footer-contact a.contact-link:hover svg {
-    transform: scale(1.2);
-    color: var(--btn-bg);     /* opcional: cambiar color al pasar el mouse */
+    transform: scale(1.15);
+    fill: var(--footer-hover);
 }

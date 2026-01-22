@@ -1,69 +1,87 @@
-/* Contenedor general de Projects */
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
 .projects {
-    padding: 2rem;
+    padding: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Título de la sección */
 .projects h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
     color: var(--body-color);
 }
 
-/* Grid de tarjetas */
+/* =========================
+   GRID
+========================= */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
 }
 
-/* Tarjetas de proyectos */
+/* =========================
+   TARJETA
+========================= */
 .card {
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background-color: var(--card-bg);
     color: var(--card-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos y descripciones */
+/* =========================
+   TEXTOS
+========================= */
 .card h3 {
-    margin-top: 0;
-    font-size: 1.25rem;
-    color: var(--body-color);
+    margin: 0;
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .card h4 {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0.25rem 0 0.35rem;
 }
 
 .card p {
-    margin: 1rem 0;
+    margin: 0.25rem 0;
+    line-height: 1.35;
 }
 
-/* Badge de estado */
+.text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   BADGE DE ESTADO
+========================= */
 .project-badge {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    border-radius: 6px;
+    padding: 0.15rem 0.45rem;
+    border-radius: 5px;
     text-transform: uppercase;
     white-space: nowrap;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 .project-badge.en-uso {
@@ -73,7 +91,7 @@
 
 .project-badge.prototipo {
     background-color: #ffc107;
-    color: #333;
+    color: #fff;
 }
 
 .project-badge.en-desarrollo {
@@ -81,78 +99,71 @@
     color: #fff;
 }
 
-/* Tecnologías */
+/* =========================
+   ICONOS TECNOLOGÍA
+========================= */
 .tech-icons {
     display: flex;
-    gap: 0.5rem;
-    margin: 0.8rem 0 1.2rem;
+    gap: 0.35rem;
+    margin: 0.15rem 0 0.45rem;
 }
 
 .tech-icons img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.2s, filter 0.3s;
+    width: 26px;
+    height: 26px;
+    transition: transform 0.2s;
 }
 
 .tech-icons img:hover {
-    transform: scale(1.15);
+    transform: scale(1.12);
 }
 
-/* Dark theme: iconos blancos */
-body.dark-theme .tech-icons img {
-    filter: invert(1) brightness(1.2);
-}
-
-/* Imagen de proyecto */
-.project-image {
+/* =========================
+   IMAGEN / VIDEO — MISMO TAMAÑO REAL
+========================= */
+.project-media,
+.project-image,
+.card video {
     width: 100%;
-    max-height: 250px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
-    margin-top: 1rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    margin: 0.35rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s;
+    margin-bottom: 25px;
 }
 
+.project-media:hover,
 .project-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: scale(1.02);
 }
 
-/* Dark theme para imagen */
-body.dark-theme .project-image {
-    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1);
-}
-
-body.dark-theme .project-image:hover {
-    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
-}
-
-/* Botón de demo/repositorio */
-.btn-outline {
+/* =========================
+   BOTÓN — SIEMPRE ABAJO
+========================= */
+.btn-github {
+    margin-top: auto;
+    /* 🔥 Empuja el botón al fondo */
+    padding: 0.5rem 0.8rem;
+    border: 2px solid #24292e;
+    border-radius: 6px;
+    color: #24292e;
+    font-weight: 600;
+    text-align: center;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    color: #007bff;
     transition: all 0.2s;
-    margin-right: 0.5rem;
-    display: inline-block;
+    display: block;
 }
 
-.btn-outline:hover {
-    background-color: #007bff;
+.btn-github:hover {
+    background-color: #24292e;
     color: #fff;
 }
 
-/* Video de demostración opcional */
-.card video {
-    width: 100%;
-    margin-top: 1rem;
-    border-radius: 8px;
-}
-
-/* ------- Light/Dark theme variables ------- */
+/* =========================
+   VARIABLES LIGHT/DARK
+========================= */
 :root {
     --card-bg: #f3f3f3;
     --card-color: #333;
@@ -161,11 +172,23 @@ body.dark-theme .project-image:hover {
 body.dark-theme {
     --card-bg: #2c2c2c;
     --card-color: #f1f1f1;
-
-    /* Dark theme badges */
-    --badge-en-uso-bg: #28a745;
-    --badge-prototipo-bg: #ffc107;
-    --badge-en-desarrollo-bg: #17a2b8;
-    --badge-color-light: #fff;
-    --badge-color-dark: #333;
 }
+
+.btn-github {
+    margin-top: auto;
+    padding: 0.5rem 0.8rem;
+    border: 2px solid var(--github-btn-border);
+    border-radius: 6px;
+    color: var(--github-btn-text);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: block;
+}
+
+.btn-github:hover {
+    background-color: var(--github-btn-hover-bg);
+    color: var(--github-btn-hover-text);
+}
+

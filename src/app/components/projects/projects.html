@@ -3,39 +3,39 @@
 
     <div class="grid">
         <div class="card" *ngFor="let p of proyectos">
+            <div class="text-content">
+                <h3>
+                    {{ p.nombre }}
+                    <span class="project-badge" [ngClass]="{
+                    'en-uso': p.estado === 'En uso',
+                    'prototipo': p.estado === 'Prototipo',
+                    'en-desarrollo': p.estado === 'En desarrollo'
+                }">
+                        {{ p.estado }}
+                    </span>
+                </h3>
 
-            <h3>
-                {{ p.nombre }}
-                <span class="project-badge" [ngClass]="{
-                        'en-uso': p.estado === 'En uso',
-                        'prototipo': p.estado === 'Prototipo',
-                        'en-desarrollo': p.estado === 'En desarrollo'
-                      }">
-                    {{ p.estado }}
-                </span>
-            </h3>
-            <h4>{{ p.subtitulo }}</h4>
-            <p>{{ p.descripcion }}</p>
+                <h4>{{ p.subtitulo }}</h4>
+                <p>{{ p.descripcion }}</p>
+            </div>
 
             <!-- Tecnologías -->
             <div class="tech-icons">
                 <img *ngFor="let t of p.tech" [src]="t" alt="tech icon">
             </div>
 
-            <a [href]="p.repo" target="_blank" class="btn btn-outline">
-                Enlace
+            <!-- Imagen (misma para todos, ya no clicable) -->
+            <img *ngIf="p.imagen" [src]="p.imagen" alt="{{ p.nombre }} imagen" class="project-media" />
+
+            <!-- Video (misma altura que la imagen) -->
+            <video *ngIf="p.video && !p.imagen" controls class="project-media">
+                <source [src]="p.video" type="video/mp4">
+            </video>
+
+            <!-- BOTÓN (primer proyecto → web, resto → GitHub) -->
+            <a [href]="p.repo" target="_blank" class="btn-github">
+                {{ p.botonTexto }}
             </a>
-
-            <!-- Imagen si existe -->
-            <img *ngIf="p.imagen" [src]="p.imagen" alt="{{ p.nombre }} imagen" class="project-image" />
-
-            <!-- Video si NO hay imagen -->
-            <div *ngIf="p.video && !p.imagen">
-                <h4>{{ p.videoTitulo }}</h4>
-                <video controls width="100%">
-                    <source [src]="p.video" type="video/mp4">
-                </video>
-            </div>
 
         </div>
     </div>
